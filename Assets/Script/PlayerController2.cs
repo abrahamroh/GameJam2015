@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class PlayerController2 : MonoBehaviour {
+	public static int playerHealth;
+
+	public int startingHealth;
 	public float movementSpeed;
 	public float turningSpeed;
 	public float bulletSpeed;
 	public float firingRate;
-	public int playerHealth;
 	
 	public GameObject playerProjectile;
 	
@@ -19,12 +21,13 @@ public class PlayerController2 : MonoBehaviour {
 		audioScript = GameObject.Find("Mic").GetComponent<AudioManager>();
 
 		rapidFireTimer = 0;
+		playerHealth = startingHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GetMovement();
-		//GetAttack();
+		GetAttack();
 	}
 	
 	void FixedUpdate(){
