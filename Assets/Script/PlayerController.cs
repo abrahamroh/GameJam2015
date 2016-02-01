@@ -26,17 +26,22 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetMovement();
-		GetAttack();
+		if(!ApplicationControls.isGamePaused()){
+			GetMovement();
+			GetAttack();
+		}
 	}
 
 	void FixedUpdate(){
-		UpdateRapidTimer();
-		GetRapidFire();
+		if(!ApplicationControls.isGamePaused()){
+			UpdateRapidTimer();
+			GetRapidFire();
 		
-		if(playerHealth <= 0){
-			Destroy(this.gameObject);
-			audioScript.blueWinSfx(transform.position);
+			if(playerHealth <= 0){
+				Destroy(this.gameObject);
+				audioScript.blueWinSfx(transform.position);
+				ApplicationControls.GameOver(2);
+			}
 		}
 	}
 
