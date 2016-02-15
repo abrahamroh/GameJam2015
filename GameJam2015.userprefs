@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ApplicationControls.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\LifePackScript.cs">
     <Files>
-      <File FileName="Assets\Script\ApplicationControls.cs" Line="33" Column="1" />
-      <File FileName="Assets\Script\LoadOnClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\PlayerController2.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\HUDLivesScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\HUDLivesScript2.cs" Line="1" Column="19" />
+      <File FileName="Assets\Script\BulletScript.cs" Line="9" Column="17" />
+      <File FileName="Assets\Script\LifePackScript.cs" Line="6" Column="13" />
+      <File FileName="Assets\Script\PlayerController.cs" Line="147" Column="4" />
+      <File FileName="Assets\Script\PlayerController2.cs" Line="141" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
