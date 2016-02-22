@@ -144,4 +144,11 @@ public class PlayerController2 : MonoBehaviour {
 
 		audioScript.redHitBlueSfx(transform.position);
 	}
+	
+	public void HealHealth(int health){
+		playerHealth += health;
+		if(playerHealth > startingHealth){
+			playerHealth = startingHealth;
+		}
+	}
 }
