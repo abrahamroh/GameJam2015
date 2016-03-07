@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\ApplicationControls.cs" />
+     <Compile Include="Assets\Script\AttackScript.cs" />
      <Compile Include="Assets\Script\AudioManager.cs" />
      <Compile Include="Assets\Script\BulletScript.cs" />
      <Compile Include="Assets\Script\BulletScript2.cs" />

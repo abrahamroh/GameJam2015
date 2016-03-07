@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ItemSpawnScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AttackScript.cs">
     <Files>
-      <File FileName="Assets\Script\ItemSpawnScript.cs" Line="25" Column="6" />
-      <File FileName="Assets\Script\BulletScript.cs" Line="9" Column="17" />
-      <File FileName="Assets\Script\LifePackScript.cs" Line="6" Column="13" />
-      <File FileName="Assets\Script\PlayerController.cs" Line="127" Column="57" />
-      <File FileName="Assets\Script\PlayerController2.cs" Line="141" Column="2" />
+      <File FileName="Assets\Script\AttackScript.cs" Line="22" Column="14" />
+      <File FileName="Assets\Script\ItemSpawnScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\BulletScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\PlayerController.cs" Line="129" Column="3" />
+      <File FileName="Assets\Script\PlayerController2.cs" Line="133" Column="26" />
+      <File FileName="Assets\Script\ApplicationControls.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
