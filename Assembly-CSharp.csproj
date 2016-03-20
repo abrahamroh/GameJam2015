@@ -46,16 +46,20 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\ApplicationControls.cs" />
+     <Compile Include="Assets\Script\AttackScript.cs" />
      <Compile Include="Assets\Script\AudioManager.cs" />
      <Compile Include="Assets\Script\BulletScript.cs" />
      <Compile Include="Assets\Script\BulletScript2.cs" />
      <Compile Include="Assets\Script\HUDLivesScript.cs" />
      <Compile Include="Assets\Script\HUDLivesScript2.cs" />
+     <Compile Include="Assets\Script\HUDPowerScript.cs" />
+     <Compile Include="Assets\Script\HUDPowerScript2.cs" />
      <Compile Include="Assets\Script\ItemSpawnScript.cs" />
      <Compile Include="Assets\Script\LifePackScript.cs" />
      <Compile Include="Assets\Script\LoadOnClick.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\PlayerController2.cs" />
+     <Compile Include="Assets\Script\PowerUpScript.cs" />
      <Compile Include="Assets\Script\WallScript.cs" />
      <Compile Include="Assets\Script\WallScript2.cs" />
  <Reference Include="UnityEngine.UI">

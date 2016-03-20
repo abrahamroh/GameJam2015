@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using AttackScript;
 
 public class PlayerController2 : MonoBehaviour {
 	public static int playerHealth;
+	public static int powerLevel;
 
 	public int startingHealth;
 	public float movementSpeed;
@@ -13,15 +15,21 @@ public class PlayerController2 : MonoBehaviour {
 	public GameObject playerProjectile;
 	
 	float rapidFireTimer;
+	
+	const int MAX_POWER_LEVEL = 3;
+	const int INIT_POWER_LEVEL = 1;
 
 	AudioManager audioScript;
+	Attacks attackManager;
 	
 	// Use this for initialization
 	void Start () {
 		audioScript = GameObject.Find("Mic").GetComponent<AudioManager>();
+		attackManager = new Attacks(GetComponent<SpriteRenderer>().sprite, transform, playerProjectile, bulletSpeed);
 
 		rapidFireTimer = 0;
 		playerHealth = startingHealth;
+		powerLevel = INIT_POWER_LEVEL;
 	}
 	
 	// Update is called once per frame
@@ -126,21 +134,16 @@ public class PlayerController2 : MonoBehaviour {
 		}
 	}
 	
-	void  Shoot(){
-		Vector3 spawnOffset = new Vector3(0, GetComponent<SpriteRenderer>().sprite.bounds.size.y / 4f, 0);
-		spawnOffset = transform.rotation * spawnOffset;
-		Vector3 spawnPoint = transform.position - spawnOffset;
-		GameObject newBullet = (GameObject)Instantiate(playerProjectile, spawnPoint, transform.localRotation);
-		
-		Vector2 bulletVelocity = new Vector2(spawnOffset.x, spawnOffset.y);
-		bulletVelocity = bulletVelocity.normalized * bulletSpeed;
-		newBullet.GetComponent<Rigidbody2D>().velocity = -bulletVelocity;
-
-		audioScript.blueFireSfx(transform.position);
+	void Shoot(){
+		attackManager.Shoot(powerLevel);
+		audioScript.redFireSfx(transform.position);
 	}
 	
 	public void TakeDamage(int damage){
 		playerHealth -= damage;
+		if(playerHealth < 0){
+			playerHealth = 0;
+		}
 
 		audioScript.redHitBlueSfx(transform.position);
 	}
@@ -149,6 +152,13 @@ public class PlayerController2 : MonoBehaviour {
 		playerHealth += health;
 		if(playerHealth > startingHealth){
 			playerHealth = startingHealth;
+		}
+	}
+	
+	public void PowerUp(int power){
+		powerLevel += power;
+		if(powerLevel > MAX_POWER_LEVEL){
+			powerLevel = MAX_POWER_LEVEL;
 		}
 	}
 }
