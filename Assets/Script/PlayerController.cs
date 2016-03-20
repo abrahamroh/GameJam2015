@@ -4,6 +4,7 @@ using AttackScript;
 
 public class PlayerController : MonoBehaviour {
 	public static int playerHealth;
+	public static int powerLevel;
 	
 	public int startingHealth;
 	public float movementSpeed;
@@ -14,7 +15,9 @@ public class PlayerController : MonoBehaviour {
 	public GameObject playerProjectile;
 
 	float rapidFireTimer;
-	Sprite playerSprite;
+
+	const int MAX_POWER_LEVEL = 3;
+	const int INIT_POWER_LEVEL = 1;
 
 	AudioManager audioScript;
 	Attacks attackManager;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 
 		rapidFireTimer = 0;
 		playerHealth = startingHealth;
+		powerLevel = INIT_POWER_LEVEL;
 	}
 	
 	// Update is called once per frame
@@ -126,12 +130,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Shoot(){
-		attackManager.Shoot(1);
+		attackManager.Shoot(powerLevel);
 		audioScript.redFireSfx(transform.position);
 	}
 
 	public void TakeDamage(int damage){
 		playerHealth -= damage;
+		if(playerHealth < 0){
+			playerHealth = 0;
+		}
 
 		audioScript.blueHitRedSfx(transform.position);
 	}
@@ -140,6 +147,13 @@ public class PlayerController : MonoBehaviour {
 		playerHealth += health;
 		if(playerHealth > startingHealth){
 			playerHealth = startingHealth;
+		}
+	}
+	
+	public void PowerUp(int power){
+		powerLevel += power;
+		if(powerLevel > MAX_POWER_LEVEL){
+			powerLevel = MAX_POWER_LEVEL;
 		}
 	}
 }
